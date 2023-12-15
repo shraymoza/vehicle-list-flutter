@@ -15,8 +15,8 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
   Map<String, dynamic> vehicleData ={};
   var imageResp;
   String imageUrl = '';
-
   @override
+
   void initState() {
     super.initState();
     vehicleData=widget.vehicle;
@@ -31,20 +31,13 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Vehicle Details'),
+        title:  Text(vehicleData['name']),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-             // if (imageResp!=null)
-             //  Image.memory(
-             //    imageResp.bodyBytes,
-             //    width: 200,
-             //    height: 200,
-             //    fit: BoxFit.cover,
-             //  ),
             const SizedBox(height: 20),
             Text(
               'Name: ${vehicleData['name']}',
@@ -86,11 +79,6 @@ class _VehicleDetailsScreenState extends State<VehicleDetailsScreen> {
               'Edited: ${vehicleData['edited']}',
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-
-            // if (imageUrl.isEmpty)
-            //   const Center(
-            //     child: CircularProgressIndicator(),
-            //   ),
           ],
         ),
       ),
